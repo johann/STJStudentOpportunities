@@ -22,5 +22,7 @@ gem "simple_form", ">= 2.0.4"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 
 
+group :production do
+	gem 'pg', '0.12.2'
 
-gem "pg", "0.12.2", :group => :production
+end
