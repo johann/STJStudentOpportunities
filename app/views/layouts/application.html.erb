@@ -10,26 +10,45 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <header class="navbar navbar-fixed-top">
+    <header class="navbar navbar-fixed-top navbar-inverse">
       <nav class="navbar-inner">
         <div class="container">
           <%= render 'layouts/navigation' %>
         </div>
       </nav>
     </header>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
+    <div id="" role="main">
+      <div class="container-fluid">
+        <div class="">
+           <div class="row-fluid">
+            <div class="span2">
+              <ul class="nav nav-tabs nav-stacked">
+                <li><a href="">Student Orgs</a></li>
+                <li><a href="">Greek Orgs</a></li>
+                <li><a href="">Academic Honor Societies</a></li>
+                <li><a href="">University Honor Societies</a></li>
+                <li><a href="">University Programs</a></li>
+                <li><a href="">Graduate Assistantships</a></li>
+                <li><a href="">Scholarships/Grants</a></li>
+                <li><a href="">Job Opportunities</a></li>
+                <li><a href="">Others</a></li>
+                <li><a href="">Upcoming</a></li>
+              <ul>
+            </div>
+            <div class="span10">
               <%= render 'layouts/messages' %>
               <%= yield %>
+
+        
+ 
             </div>
           </div>
-          <footer>
-          </footer>
+
         </div>
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->
+    <footer>
+            <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>

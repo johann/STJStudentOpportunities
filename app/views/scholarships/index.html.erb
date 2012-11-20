@@ -1,0 +1,55 @@
+<h1 class="pageheader">Scholarships</h1>
+
+<table class="table">
+  <tr>
+    <th>Organization</th>
+    <th>Scholarships</th>
+    <th>Description</th>
+    <th>GPA</th>
+    <th></th>
+    <!--<th></th>
+    <th></th>
+    <th></th>
+    <th></th>-->
+  </tr>
+
+<% @scholarships.each do |scholarship| %>
+  <tr>
+    <td><%= scholarship.org %></td>
+    <td><%= link_to scholarship.schol, scholarship %></td>
+    <td><%= scholarship.descrip %></td>
+    <td><%= scholarship.gpa %></td>
+    <td><div class="btn-group btn-group-vertical">
+  <button class="btn"><%= link_to 'More info', scholarship.infourl %></button>
+  <button class="btn"><%= link_to 'Apply Here', scholarship.appyurl %></button>
+  <% if user_signed_in? %>
+  <% if current_user.has_role? :admin %>
+  <button class="btn"><%= link_to 'Show', scholarship %></button>
+  <% end %>
+  <% end %>
+  <% if user_signed_in? %>
+  <% if current_user.has_role? :admin %>
+  <button class="btn"><%= link_to 'Edit', edit_scholarship_path(scholarship) %></button>
+  <% end %>
+  <% end %>
+  <% if user_signed_in? %>
+  <% if current_user.has_role? :admin %>
+  <button class="btn"><%= link_to 'Delete', scholarship, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <% end %>
+  <% end %>
+</div></td>
+    <!-- <td><%= link_to 'More info', scholarship.infourl %></td>
+    <td><%= link_to 'Apply Here', scholarship.appyurl %></td>
+    <td><%= link_to 'Show', scholarship %></td>
+    <td><%= link_to 'Edit', edit_scholarship_path(scholarship) %></td>
+    <td></td>
+   <td><%= link_to 'Destroy', scholarship, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+  </tr>
+
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scholarship', new_scholarship_path %>

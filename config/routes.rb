@@ -1,4 +1,7 @@
 Myapp::Application.routes.draw do
+  resources :scholarships
+  root :to => "scholarships#index"
+
   authenticated :user do
     root :to => 'home#index'
   end
