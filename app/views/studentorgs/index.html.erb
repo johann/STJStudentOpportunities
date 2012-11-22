@@ -1,0 +1,31 @@
+<h1>Listing studentorgs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Gpa</th>
+    <th>Infourl</th>
+    <th>Applyurl</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @studentorgs.each do |studentorg| %>
+  <tr>
+    <td><%= studentorg.name %></td>
+    <td><%= studentorg.description %></td>
+    <td><%= studentorg.gpa %></td>
+    <td><%= studentorg.infourl %></td>
+    <td><%= studentorg.applyurl %></td>
+    <td><%= link_to 'Show', studentorg %></td>
+    <td><%= link_to 'Edit', edit_studentorg_path(studentorg) %></td>
+    <td><%= link_to 'Destroy', studentorg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Studentorg', new_studentorg_path %>
