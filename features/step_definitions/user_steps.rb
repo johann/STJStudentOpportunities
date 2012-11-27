@@ -1,4 +1,4 @@
-### UTILITY METHODS ###
+ ### UTILITY METHODS ###
 
 def create_visitor
   @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
