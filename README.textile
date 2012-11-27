@@ -19,4 +19,5 @@ b) We could find a way to provide a means for an administrator to upload csv fil
 We will starter with the first option and then move onto the second.
 
 h2. Future
+
 The future of The Student Opportunities Page includes implementing Backbonejs for the frontend to improve the frontend. Also we would like to provide a slightly different system for mobile views.
